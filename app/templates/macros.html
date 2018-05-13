@@ -1,9 +1,10 @@
+{% extends 'base.html' %}
 
 {% macro display(article_list) %}
 <div class="row">
 	{% for article in article_list %}
 		<div class="col-md-6 col-lg-4">
-			
+			<a class="portfolio-item d-block mx-auto" href="#article-modal">
 			<div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
 				<div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
 					<i class="fa fa-search-plus fa-3x"></i>
@@ -12,10 +13,17 @@
 			</div>
 			<img class="img-fluid" src="{{article.image}}" alt="">
 			<p><a href="#">{{article.title}}</a></p>
+			
+			  <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#show">view details</button>
+			  <div id="show" class="collapse">
+			    <p>some info here </p>
+			  </div>
 
 		</div>
-		
+
+
 	{% endfor %}
+	
 </div>
 
 {% endmacro %}
