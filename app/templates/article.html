@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{% block content %}
+
+<div class="container">
+  <h3>News Categories</h3><small>from {{country}}</small>
+  <hr class="star-dark mb-5">
+  <br>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#business">Business</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#sports">Sports</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#entertainment">Entertainment</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#general">General</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#health">Health</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#science">Science</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#technology">Technology</a>
+    </li>
+
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="business" class="container tab-pane active"><br>
+    {{ macro.display(business) }}
+      
+    </div>
+    <div id="sports" class="container tab-pane fade"><br>
+      {{ macro.display(sports) }}
+    </div>
+
+    <div id="entertainment" class="container tab-pane fade"><br>
+       {{ macro.display(entertainment)}}
+    </div>
+
+    <div id="general" class="container tab-pane fade"><br>
+      {{ macro.display(general) }}
+    </div>
+    <div id="health" class="container tab-pane fade"><br>
+      {{ macro.display(health) }}
+    </div>
+    <div id="science" class="container tab-pane fade"><br>
+      {{ macro.display(science) }}
+    </div>
+    <div id="technology" class="container tab-pane fade"><br>
+      {{ macro.display(technology) }}
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
