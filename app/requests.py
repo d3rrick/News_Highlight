@@ -60,6 +60,7 @@ def get_source():
 
 
 def get_details(id):
+
 	base = f"https://newsapi.org/v2/top-headlines?sources={id}&apiKey={api_key}"
 	all_data = []
 	with urllib.request.urlopen(base) as url:
