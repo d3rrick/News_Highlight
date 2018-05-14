@@ -1,6 +1,7 @@
 from flask import render_template
 from . import main
-from ..requests import get_news,get_source
+from ..requests import get_news,get_source,get_details
+from ..models import Article
 
 
 
@@ -8,7 +9,8 @@ from ..requests import get_news,get_source
 
 @main.route("/")
 def index():
-	return render_template("index.html")
+	sources = get_source()
+	return render_template("index.html",sources=sources)
 
 
 
@@ -26,10 +28,13 @@ def article(country):
 
 	return render_template("article.html", country=country,business=business,sports=sports,entertainment=entertainment,general=general,health=health,science=science,technology=technology)
 
-@main.route("/sources")
-def sources():
+@main.route("/sources/<string:id>")
+def sources(id):
 	sources = get_source()
-	print(sources)
+	data = get_details(id)
+	
 
-	return render_template("article.html", sources=sources)
+	for source in sources:
+		if source.id == id:
+			return render_template("sources.html", source=source, data=data,id=id)
 
