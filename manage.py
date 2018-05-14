@@ -8,4 +8,5 @@ manager = Manager(app)
 manager.add_command('server',Server)
 
 if __name__ == '__main__':
+	"""this code executes if this file is run as the main file"""
 	manager.run()
