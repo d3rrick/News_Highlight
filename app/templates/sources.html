@@ -1,7 +1,10 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% import 'macros.html' as macro %}
 
 		{% block content %}
+		<h2>{{ id }} news.</h2><hr>
+        {{ macro.display(data) }}
+	
 
+		{% endblock %}
 
-		{% block %}
