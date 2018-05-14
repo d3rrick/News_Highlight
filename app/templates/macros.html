@@ -13,11 +13,9 @@
 			</div>
 			<img class="img-fluid" src="{{article.image}}" alt="">
 			<p><a href="#">{{article.title}}</a></p>
-			
-			  <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#show">view details</button>
-			  <div id="show" class="collapse">
-			    <p>some info here </p>
-			  </div>
+			<small>by {{ article.author }}</small>
+			 <p>{{ article.description }} </p>
+		
 
 		</div>
 
